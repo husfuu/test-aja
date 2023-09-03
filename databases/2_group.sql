@@ -1,0 +1,7 @@
+SELECT
+    EXTRACT(YEAR FROM tanggal) AS Tahun,
+    SUM(CASE WHEN value = 'A' THEN 1 ELSE 0 END) AS A,
+    SUM(CASE WHEN value = 'B' THEN 1 ELSE 0 END) AS B,
+    SUM(CASE WHEN value = 'C' THEN 1 ELSE 0 END) AS C
+FROM Data_tanggal
+GROUP BY EXTRACT(YEAR FROM tanggal);
